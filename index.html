@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="toDoList">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+    <script src="controllers.js"></script>
+  </head>
+  <body>
+    <div>
+      <div>
+        {{ "Frooms" | greet }}
+      </div>
+      <div ng-controller="ToDoController">
+        <h1 ng-repeat="todo in todos">{{ todo.ToDo }}: {{ todo.done ? "completed" : "not completed" }}</h1>
+        <button ng-click='addToDo(harrrooo)'>Freemy FreemFreems</button>
+        <button ng-click='removeToDo()'>Froomy FroomFrooms</button>
+        <input ng-model='harrrooo' placeholder="Buffroooms"></input>
+      </div>
+    </div>
+  </body>
+</html>
