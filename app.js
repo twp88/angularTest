@@ -1,7 +1,15 @@
-var toDoList = angular.module('toDoList' , [])
+app.factory('ToDoFactory', function() {
+  return {
+    create: function() {
+      return [];
+    };
 
-toDoList.filter('greet', function() {
-  return function(name) {
-    return "Hello " + name + '!';
-  };
+    add: function(x,y) {
+      return x.push({ToDo:y, done:false});
+    };
+
+    takeAway: function(x) {
+      return x.pop();
+    };
+  }
 });

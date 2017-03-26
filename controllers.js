@@ -15,7 +15,6 @@ toDoList.controller('ToDoController', ["$scope", function($scope){
   $scope.removeToDo = function() {
     $scope.todos.pop();
   };
-  
 }]);
 
 
