@@ -1,19 +1,16 @@
 var toDoList = angular.module('toDoList', []);
 
-toDoList.controller('ToDoController', ["$scope", function($scope){
-  $scope.todos = [
-    {ToDo:'Thingy', done:false},
-    {ToDo:'Freemy', done:false},
-    {ToDo:'Freemy', done:true},
-    {ToDo:'Freemy', done:false}
-  ];
+toDoList.controller('ToDoController', ['ToDoFactory', function (ToDoFactory) {
+  var self = this;
+  self.todos = [];
 
-  $scope.addToDo = function(thig) {
-    $scope.todos.push({ToDo:thig, done:false});
+  self.addToDo = function(thig) {
+    console.log('hi')
+    self.todos.push(new ToDoFactory(thig));
   };
 
-  $scope.removeToDo = function() {
-    $scope.todos.pop();
+  self.removeToDo = function() {
+    this.todos.pop();
   };
 }]);
 

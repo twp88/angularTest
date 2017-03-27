@@ -1,15 +1,11 @@
-app.factory('ToDoFactory', function() {
-  return {
-    create: function() {
-      return [];
+toDoFactory.factory('ToDoFactory', function() {
+  ToDo = function(text, completed){
+    this.text = text;
+    this.completed = (typeof completed !== 'undefined') ? completed: false
     };
 
-    add: function(x,y) {
-      return x.push({ToDo:y, done:false});
+    ToDo.prototype.complete = function(x) {
+      this.completed = true;
     };
-
-    takeAway: function(x) {
-      return x.pop();
-    };
-  }
-});
+  return ToDo;
+  });
