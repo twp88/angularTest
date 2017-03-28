@@ -3,18 +3,19 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
     <script src="controllers.js"></script>
+    <script src="app.js"></script>
   </head>
   <body>
-    <div>
-      <div>
-        {{ "Frooms" | greet }}
-      </div>
-      <div ng-controller="ToDoController as controller">
-        <h1 ng-repeat="todo in controller.todos">{{ todo.ToDo }}: {{ todo.done ? "completed" : "not completed" }}</h1>
-        <button ng-click='controller.addToDo(harrrooo)'>Freemy FreemFreems</button>
-        <button ng-click='controller.removeToDo()'>Froomy FroomFrooms</button>
-        <input ng-model='harrrooo' placeholder="Buffroooms"></input>
-      </div>
+    <div ng-controller="ToDoController as controller">
+      <h1 ng-repeat="todo in controller.todos">
+        <p>
+        {{ todo.text }}: {{ todo.completed ? "completed" : "not completed" }}
+        <input type='checkbox' ng-click='todo.complete();'></input>
+      </p>
+      </h1>
+      <button ng-click='controller.addToDo(text)'>Add to list</button>
+      <button ng-click='controller.removeToDo()'>Remove from list</button>
+      <input ng-model='text' placeholder="Enter text here"></input>
     </div>
   </body>
 </html>
