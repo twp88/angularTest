@@ -5,7 +5,12 @@ toDoList.factory('ToDoFactory', function() {
     };
 
     ToDo.prototype.complete = function() {
-      this.completed = true;
+      if (this.completed === false) {
+        this.completed = true;
+      } else if (this.completed === true) {
+        this.completed = false;
+      }
+
     };
   return ToDo;
 });

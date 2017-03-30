@@ -3,7 +3,8 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
     <script src="controllers.js"></script>
-    <script src="app.js"></script>
+    <script src="factory.js"></script>
+    <script src="service.js"></script>
   </head>
   <body>
     <div ng-controller="ToDoController as controller">
@@ -16,6 +17,8 @@
       <button ng-click='controller.addToDo(text)'>Add to list</button>
       <button ng-click='controller.removeToDo()'>Remove from list</button>
       <input ng-model='text' placeholder="Enter text here"></input>
+
+      <button ng-click='controller.ajaxMe()'>Make the ajax request</button>
     </div>
   </body>
 </html>
